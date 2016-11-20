@@ -12,7 +12,7 @@
 		<servlet-api.version>3.1.0</servlet-api.version>
 		<spring.version>3.2.17.RELEASE</spring.version>
 		<hibernate.version>4.3.8.Final</hibernate.version>
-		<hibernate-jpa-2.0.version>1.0.1.Final</hibernate-jpa-2.0.version>
+		<hibernate-jpa-2.1.version>1.0.0.Final</hibernate-jpa-2.1.version>
 		<mysql-connector-java.version>5.1.40</mysql-connector-java.version>
 	</properties>
 
@@ -83,8 +83,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>${hibernate-jpa-2.0.version}</version>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>${hibernate-jpa-2.1.version}</version>
 		</dependency>
 		<!-- MySql JDBC -->
 		<dependency>
