@@ -4,21 +4,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.interview.domains.Equations;
+import com.interview.manager.IEquationManager;
 
 @Component
 public class EquationFacadeImpl implements IEquationFacade{
 
 	@Autowired
-	private IEquationFacade equationFacade;
+	private IEquationManager equationManager;
 	
 	@Override
 	public void create(Equations equations) {
-		 equationFacade.create(equations);
+		equationManager.create(equations);
 	}
 
 	@Override
 	public Equations read(Long id) {
-		return equationFacade.read(id);
+		return equationManager.read(id);
 	}
 
 }
