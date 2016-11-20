@@ -2,17 +2,10 @@
 <html>
 <head></head>
 <body>
-	<h2>Quadratic Equations</h2>
-	<p>a*x*x + b*x + c = 0</p>
-	<form action="">
-		<label>Variable a</label> <input type="number" name="a" value="0">
-		<br> <label>Variable b</label> <input type="number" name="b"
-			value="0"> <br> <label>Variable c</label> <input
-			type="number" name="c" value="0"> <br> <input
-			type="submit">
-	</form>
+	
 
 	<%
+	response.sendRedirect("resolve.html");
 		String result = "Woking";
 		int a = 0;
 		int b = 0;

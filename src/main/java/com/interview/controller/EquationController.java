@@ -16,9 +16,9 @@ public class EquationController {
 	@Autowired
 	private IEquationFacade equationFacade;
 
-	@RequestMapping(value = "/admin/transaction", method = RequestMethod.GET)
-	public String createQuadraticRule(ModelMap map, HttpSession session) {
-		return "/jsp/createQuadraticRule";
+	@RequestMapping(value = "/resolve", method = RequestMethod.GET)
+	public String resolveQuadraticEquation(ModelMap map, HttpSession session) {
+		return "resolveQuadraticEquation";
 	}
 
 }
