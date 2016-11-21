@@ -29,14 +29,15 @@ public class EquationController {
 	@RequestMapping(value = "/result", method = RequestMethod.POST)
 	public String resultQuadraticEquation(@ModelAttribute("coefficientBean") CoefficientBean coefficientBean,
 			HttpSession session) {
-		String resultPage = "resultPage";
+		String resultPage = "redirect:/show.html";
 		try {
 			equationFacade.create(coefficientBean);
+			session.setAttribute("coefficientBean", coefficientBean);
 		} catch (NumberFormatException e) {
 			session.setAttribute("error", "Wrong Number Format: " + e.getMessage());
 			resultPage = "redirect:/error.html";
 		} catch (NegativeDescriminantException e) {
-			session.setAttribute("error",  e.getClass().getName());
+			session.setAttribute("error","Dicriminant iz less than 0: " + e.getClass().getSimpleName());
 			resultPage = "redirect:/error.html";
 		}
 		return resultPage;
@@ -45,5 +46,12 @@ public class EquationController {
 	@RequestMapping(value = "/error", method = RequestMethod.GET)
 	public String errorPage(ModelMap map, HttpSession session) {
 		return "errorPage";
+	}
+
+	@RequestMapping(value = "/show", method = RequestMethod.GET)
+	public String showResult(ModelMap model, HttpSession session) {
+		CoefficientBean coefficientBean = (CoefficientBean) session.getAttribute("coefficientBean");
+		model.addAttribute(coefficientBean);
+		return "resultPage";
 	}
 }

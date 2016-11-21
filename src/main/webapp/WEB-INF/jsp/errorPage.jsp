@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Error</title>
 </head>
 <body>
-<%= session.getAttribute("error") %>
+<%= session.getAttribute("error") %><br>
+<a href="resolve.html">Back</a>
 </body>
 </html>

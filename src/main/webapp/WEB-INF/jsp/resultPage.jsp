@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Results</title>
 </head>
 <body>
 <h1>Result Page</h1>
+<p>For quadratic equations: <span>${coefficientBean.leadingCoefficien}*x*x + ${coefficientBean.secondCoefficien}*x + ${coefficientBean.freeMember} = 0</span> results is:</p><br>
+<ul>
+<li>Variable x1 = ${coefficientBean.firstVariable}</li>
+<li>Variable x2 = ${coefficientBean.secondVariable}</li>
+</ul>
+<a href="resolve.html">Back</a>
 </body>
 </html>
