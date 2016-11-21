@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> --%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +9,21 @@
 <title>Quadratic Equations</title>
 </head>
 <body>
-<h2>Quadratic Equations</h2>
+	<h2>Quadratic Equations</h2>
 	<p>a*x*x + b*x + c = 0</p>
-	<form action="">
-		<label>Variable a</label> <input type="number" name="a" value="0">
-		<br> <label>Variable b</label> <input type="number" name="b"
-			value="0"> <br> <label>Variable c</label> <input
-			type="number" name="c" value="0"> <br> <input
-			type="submit">
-	</form>
+	<form:form method="post" commandName="coefficientBean"
+		id="coefficientBeanForm" name="coefficientBeannForm"
+		action="result.html">
+		<label>Variable a:</label>
+		<form:input path="leadingCoefficien" />
+		<br>
+		<label>Variable b:</label>
+		<form:input path="secondCoefficien" />
+		<br>
+		<label>Variable c:</label>
+		<form:input path="freeMember" />
+		<br>
+		<input type="submit" value="result">
+	</form:form>
 </body>
 </html>
