@@ -28,7 +28,14 @@ public class Equations implements Serializable{
 	private Double secondCoefficient;
 	@Column(name = "FREEE_MEMBER")
 	private Double freeMember;
-
+	@Column(name = "FIRST_VARIABLE")
+	private Double firstVariable;
+	@Column(name = "SECOND_VARIABLE")
+	private Double secondVariable;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "CREATED_DATE")
+	private Date createdDate;
+	
 	public Long getId() {
 		return id;
 	}
@@ -84,13 +91,5 @@ public class Equations implements Serializable{
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-
-	@Column(name = "FIRST_VARIABLE")
-	private Double firstVariable;
-	@Column(name = "SECOND_VARIABLE")
-	private Double secondVariable;
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATED_DATE")
-	private Date createdDate;
 
 }
