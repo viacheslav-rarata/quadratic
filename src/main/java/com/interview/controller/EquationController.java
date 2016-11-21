@@ -8,9 +8,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.interview.bean.CoefficientBean;
+import com.interview.exception.NegativeDescriminantException;
 import com.interview.facade.IEquationFacade;
 
 @Controller
@@ -31,11 +31,12 @@ public class EquationController {
 			HttpSession session) {
 		String resultPage = "resultPage";
 		try {
-			double leadingCoefficient = Double.parseDouble(coefficientBean.getLeadingCoefficien());
-			double secondCoefficient = Double.parseDouble(coefficientBean.getSecondCoefficien());
-			double freeMember = Double.parseDouble(coefficientBean.getFreeMember());
+			equationFacade.create(coefficientBean);
 		} catch (NumberFormatException e) {
 			session.setAttribute("error", "Wrong Number Format: " + e.getMessage());
+			resultPage = "redirect:/error.html";
+		} catch (NegativeDescriminantException e) {
+			session.setAttribute("error",  e.getClass().getName());
 			resultPage = "redirect:/error.html";
 		}
 		return resultPage;

@@ -3,6 +3,7 @@ package com.interview.facade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.interview.bean.CoefficientBean;
 import com.interview.domains.Equations;
 import com.interview.manager.IEquationManager;
 
@@ -13,8 +14,8 @@ public class EquationFacadeImpl implements IEquationFacade{
 	private IEquationManager equationManager;
 	
 	@Override
-	public void create(Equations equations) {
-		equationManager.create(equations);
+	public void create(CoefficientBean coefficientBean) {
+		equationManager.create(coefficientBean);
 	}
 
 	@Override
